@@ -5,83 +5,32 @@ const dados = [
     {
         id: "01",
         titulo: "𝒜𝓃é𝒾𝓈 𝒹𝑒 𝒩𝑜𝒾𝓋𝒶𝒹𝑜",
-        img: "Anel Noivado"
+        preco:"R$ 199,90",
+        categoria:"Anel em Prata",
+        image: "https://images.tcdn.com.br/img/img_prod/1104305/anel_de_noivado_nazilli_ii_461_1_59ec7bebe9e874b786d4a61b864c765f.png"
     },
     {
         id: "02",
-        titulo: "Pulseiras de Ouro",
-        img: "𝒫𝓊𝓁𝓈𝑒𝒾𝓇𝒶𝓈 𝒹𝑒 𝒪𝓊𝓇𝑜"
+        titulo: "𝒫𝓊𝓁𝓈𝑒𝒾𝓇𝒶𝓈 𝒹𝑒 𝒪𝓊𝓇𝑜",
+        preco:"R$ 75,00",
+        categoria:"Pulseira Mais Vendida!",
+        image: "https://images.tcdn.com.br/img/img_prod/755645/pulseira_corrente_ouro_amarelo_18k_1105_1_8a8e81c88e6439cddfbb61999dcf67f2.jpeg"
     },
     {
         id: "03",
-        titulo: "Tênis Puma",
-        preco: 109.99,
-        categoria: "Social",
-        data: "30/10/2023"
+        titulo: "𝒞𝑜𝓃𝒿𝓊𝓃𝓉𝑜 𝒹𝑒 𝐵𝓇𝒾𝓃𝒸𝑜 𝑒 𝒞𝑜𝓁𝒶𝓇",
+        preco:"R$ 100,00",
+        categoria:"Conjuto Incrível com detalhe em pedras!",
+        image: "https://images.tcdn.com.br/img/img_prod/824010/conjunto_de_coracao_brinco_e_colar_com_pedras_banhado_1217_1_33b70fae7bf7554bf0fee15758d47c6b.jpg"
     },
     {
         id: "04",
-        titulo: "Tênis Vans",
-        preco: 299.99,
-        categoria: "Simples",
-        data: "16/11/2023"
-    },
-    {
-        id: "05",
-        titulo: "Tênis Mizuno",
-        preco: 89.99,
-        categoria: "Esportivo",
-        data: "10/04/2024"
-    },
-    {
-        id: "06",
-        titulo: "Tênis Olympikus",
-        preco: 149.99,
-        categoria: "Esportivo",
-        data: "03/06/2023"
-    },
-    {
-        id: "07",
-        titulo: "Tênis Fila",
-        preco: 349.99,
-        categoria: "Social",
-        data: "04/03/2024"
-    },
-    {
-        id: "08",
-        titulo: "Tênis Capricho",
-        preco: 39.90,
-        categoria: "Infantil",
-        data: "02/10/2023"
-    },
-    {
-        id: "09",
-        titulo: "Tênis Versace",
-        preco: 849.99,
-        categoria: "Chique e Social",
-        data: "05/01/2024"
-    },
-    {
-        id: "10",
-        titulo: "Tênis Channel",
-        preco: 179.99,
-        categoria: "Social",
-        data: "08/04/2024"
-    },
-    {
-        id: "11",
-        titulo: "Tênis Dolce Gabbana",
-        preco: 329.99,
-        categoria: "Social e Chique",
-        data: "28/01/2023"
-    },
-    {
-        id: "12",
-        titulo: "Tênis Gucci",
-        preco: 839.99,
-        categoria: "Chique",
-        data: "09/08/2024"
-    },
+        titulo: "𝒯𝑜𝓇𝓃𝑜𝓏𝑒𝓁𝑒𝒾𝓇𝒶 𝒹𝑒 𝒪𝓊𝓇𝑜 𝒸𝑜𝓂 𝒟𝑒𝓉𝒶𝓁𝒽𝑒𝓈",
+        preco: "R$ 59,99",
+        categoria: "Tornozeleiras incriveís!",
+        image: "https://images.tcdn.com.br/img/img_prod/905432/tornozeleira_joia_feminina_mix_de_coracoes_banho_ouro_20127_1_2439ef45c65dbb872c2b85378ae5600e.jpg"
+    }
+
 ]
 
 
@@ -93,14 +42,13 @@ export default function Itens( {navigation} )
             <FlatList 
             data={dados}
             renderItem={ ({item}) => 
-            <Produto 
+            <Produtos
             titulo={item.titulo} 
             preco={item.preco} 
-            categoria={item.categoria} 
-            data={item.data} 
+            categoria={item.categoria}             
+            image={item.image}
             />
-            } 
-
+            }
             keyExtractor={ item => item.id }
             contentContainerStyle={css.container}
             horizontal={false}

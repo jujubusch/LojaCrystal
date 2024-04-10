@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import uuid from 'react-native-uuid';
+/*import uuid from 'react-native-uuid';*/
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, FlatList, Keyboard, Platform } from "react-native";
-import ListaAgenda from "./ListaAgenda";
+import ListaAgendas from "./ListaAgendas";
 import * as Calendar from 'expo-calendar';
 
 export default function Agenda()
@@ -26,7 +26,7 @@ export default function Agenda()
 
     async function Salvar()
     {
-        if( agenda != "" && inicio != "" && final != "" ) {
+        if( agenda != "" && Dia != "" && Hora != "" && Acompanhantes != "" ) {
             Keyboard.dismiss();
             const evento = {
                 id: uuid.v4(),
@@ -58,18 +58,18 @@ export default function Agenda()
                 accessLevel: Calendar.CalendarAccessLevel.OWNER,
             });
 
-            let inicioDiaHora = inicio.split(" ");
-            let inicioDia = inicioDiaHora[0].split("-");
+            let inicioDiaHora = Dia.split(" ");
+            let Dia = inicioDiaHora[0].split("-");
             let inicioHora = inicioDiaHora[1].split(".");
 
-            let finalDiaHora = final.split(" ");
-            let finalDia = finalDiaHora[0].split("-");
-            let finalHora = finalDiaHora[1].split(".");
+            let FinalDiaHora = Dia.split(" ");
+            let FinalDia = FinalDiaHora[0].split("-");
+            let finalHora = FinalDiaHora[1].split(".");
 
             const newEvent = {
                 title: agenda,
-                startDate: new Date(Dia[2], Dia[1] -1 , Dia[0]),
-                endDate: new Date(Hora[2], Hora[1] -1 , Hora[0]),
+                startDate: new Date(inicioDia[2], inicioDia[1] -1 , inicioDia[0], inicioHora[0], inicioHora[1]),
+                endDate: new Date(finalHora[2], finalHora[1] -1 , finalHora[0], FinalDia[0], FinalDia[1]),
                 location: 'Crystal Joias',
                 notes: 'Ana',
             };
@@ -124,7 +124,7 @@ export default function Agenda()
             <FlatList 
             data={dados}
             renderItem={ ({item}) => 
-            <ListaAgenda 
+            <ListaAgendas 
             nome={item.nome} 
             Dia={item.Dia}
             Hora={item.Hora}

@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet, Text } from "react-native";
 import Produtos from "./Produtos";
 
 const dados = [ 
@@ -38,7 +38,8 @@ const dados = [
 export default function Itens( {navigation} )
 {
     return(
-        <View >
+        <View style={[css.container, {backgroundColor: "#E7B9AF" }]}>
+            <Text style={css.titulos}>Mais Vendidos:</Text>
             <FlatList 
             data={dados}
             renderItem={ ({item}) => 
@@ -60,8 +61,15 @@ export default function Itens( {navigation} )
 
 const css = StyleSheet.create({
     container: {
+        height: "100%",
         width: "100%",
         display: "flex",
         justifyContent: "center"
+    },
+    titulos: {
+        fontSize: 50,
+        textAlign: "center",
+        marginTop: 60,
+        color: "#C94EEB"
     }
 })

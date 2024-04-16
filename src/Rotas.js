@@ -8,7 +8,6 @@ import Login from './Login';
 import Itens from "./Itens";
 import Selecionar from "./Selecionar";
 import Agenda from './Agenda';
-import Localização from "./Localização";
 import Carrinho from "./Carrinho";
 
 const Tab = createBottomTabNavigator();
@@ -53,16 +52,6 @@ export default function Rotas() {
         }}
         name="Agenda" 
         component={Agenda} 
-        />
-        <Tab.Screen 
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="map-marker-radius-outline" color="black" size={size} />
-          ),
-        }}
-        name="Localização" 
-        component={Localização} 
         />
         <Tab.Screen 
         options={{
